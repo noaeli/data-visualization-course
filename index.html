@@ -4,67 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Data Analytics Dashboard</title>
+    <title>Flight Booking Analytics</title>
     <style>
-        /* Global styles */
+        /* Global Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient background */
-            color: #fff;
+            background: linear-gradient(135deg, #00aaff, #0047ff); /* Gradient background */
+            color: white;
             height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            overflow-x: hidden;
         }
 
         header {
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.8);
             padding: 20px;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.5em;
-            color: #fff;
+            font-size: 3em;
+            color: white;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
         }
 
         nav {
-            display: flex;
-            justify-content: center;
             margin-top: 10px;
         }
 
         nav a {
-            color: #fff;
+            color: white;
             text-decoration: none;
+            font-size: 1.2em;
             padding: 10px 20px;
-            margin: 0 10px;
-            background-color: #2575fc;
+            margin: 0 15px;
+            background-color: #0047ff;
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
 
         nav a:hover {
-            background-color: #6a11cb;
+            background-color: #00aaff;
         }
 
         section {
-            padding: 30px 15px;
+            padding: 30px;
             text-align: center;
+            margin-top: 40px;
         }
 
         .tableau-container {
             width: 100%;
             height: 600px;
-            background-color: #fff;
+            background-color: #ffffff;
             margin: 30px 0;
-            border-radius: 8px;
-            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         }
 
         .tableau-container iframe {
@@ -73,32 +75,18 @@
             border: none;
         }
 
-        footer {
-            background: rgba(0, 0, 0, 0.7);
-            text-align: center;
-            padding: 15px;
-            color: #fff;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-
-        footer a {
-            color: #fff;
-            text-decoration: none;
-        }
-
         .section-title {
-            font-size: 2em;
-            margin-bottom: 15px;
-            text-transform: uppercase;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: bold;
             letter-spacing: 2px;
-            font-weight: 700;
         }
 
         .section-content {
             font-size: 1.2em;
             line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         /* Animation */
@@ -115,25 +103,33 @@
             }
         }
 
-        /* Responsive design */
+        /* Responsive Design */
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2em;
             }
 
+            nav a {
+                font-size: 1em;
+            }
+
             .section-title {
-                font-size: 1.5em;
+                font-size: 1.8em;
             }
 
             .section-content {
                 font-size: 1em;
+            }
+
+            .tableau-container {
+                height: 400px;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Data Analytics Dashboard</h1>
+        <h1>Flight Booking Analytics</h1>
         <nav>
             <a href="#overview">Overview</a>
             <a href="#visualization">Visualization</a>
@@ -145,15 +141,16 @@
     <section id="overview" class="fadeIn">
         <div class="section-title">Overview</div>
         <div class="section-content">
-            <p>Welcome to the Data Analytics Dashboard. This platform presents interactive data insights generated from various sources. It enables data-driven decision making by showcasing key metrics in a visually appealing manner. Please explore the analytics below.</p>
+            <p>Welcome to the Flight Booking Analytics Dashboard. This platform offers an interactive analysis of flight booking data, giving you insights into booking patterns, pricing, popular destinations, and more. Use the visualization below to dive into the detailed data and make informed decisions.</p>
         </div>
     </section>
 
     <section id="visualization" class="fadeIn">
-        <div class="section-title">Interactive Data Visualization</div>
+        <div class="section-title">Flight Booking Data Visualization</div>
         <div class="tableau-container">
-            <!-- Replace the URL below with your actual Tableau embed URL -->
-            <iframe src="https://public.tableau.com/views/Flights_17434327491830/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" frameborder="0"></iframe>
+            <!-- Embed Tableau visualization using the provided URL -->
+            <iframe src="https://public.tableau.com/views/Flights_17434327491830/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" 
+                    frameborder="0"></iframe>
         </div>
     </section>
 
@@ -161,23 +158,24 @@
         <div class="section-title">Key Insights</div>
         <div class="section-content">
             <ul>
-                <li>Insight 1: Data analysis trends are showing an increase in sales during Q1 and Q2.</li>
-                <li>Insight 2: Customer satisfaction has risen by 20% over the last quarter.</li>
-                <li>Insight 3: Regional growth patterns suggest potential opportunities in Asia-Pacific markets.</li>
+                <li><strong>Peak Travel Times:</strong> Most bookings occur during holidays and summer months.</li>
+                <li><strong>Top Destinations:</strong> Popular destinations include New York, London, Paris, and Tokyo.</li>
+                <li><strong>Pricing Trends:</strong> Ticket prices vary depending on booking time and destination.</li>
+                <li><strong>Booking Classes:</strong> Economy class remains the most popular choice, but business class bookings are on the rise.</li>
             </ul>
         </div>
     </section>
 
     <footer id="contact">
-        <p>&copy; 2025 Data Analytics Inc. | <a href="mailto:info@dataanalytics.com">Contact Us</a></p>
+        <p>&copy; 2025 Flight Booking Inc. | <a href="mailto:info@flightbooking.com">Contact Us</a></p>
     </footer>
 
     <script>
-        // JavaScript for animations (simple scroll effect)
-        document.addEventListener('DOMContentLoaded', function() {
+        // JavaScript for animation and scroll effect
+        document.addEventListener('DOMContentLoaded', function () {
             const fadeInElements = document.querySelectorAll('.fadeIn');
-            window.addEventListener('scroll', function() {
-                fadeInElements.forEach(function(element) {
+            window.addEventListener('scroll', function () {
+                fadeInElements.forEach(function (element) {
                     if (element.getBoundingClientRect().top <= window.innerHeight) {
                         element.style.opacity = 1;
                         element.style.transition = 'opacity 1s ease-in-out';
